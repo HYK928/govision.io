@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G.O.Vision</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: block; /* Change to block to enable transitions */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px; /* Fixed padding */
+            list-style: none;
+            margin: 0;
+            min-width: 250px; /* Fixed width */
+            max-height: 0; /* Initial height set to 0 */
+            opacity: 0; /* Initial opacity set to 0 */
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transition for max-height and opacity */
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px; /* Fixed padding for larger clickable area */
+            font-size: 18px; /* Fixed font size */
+        }
+
+        .nav-item:hover .dropdown-menu {
+            max-height: 500px; /* Large enough to contain the entire dropdown */
+            opacity: 1; /* Fully opaque when visible */
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 70px; /* 크기 30% 증가 */
+            height: 70px; /* 크기 30% 증가 */
+            display: none; /* Initially hidden */
+            align-items: center;
+            justify-content: center;
+            background-color: #fff; /* 배경을 흰색으로 설정 */
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 추가 */
+            z-index: 1500;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #f0f0f0; /* 호버 시 약간 더 어두운 흰색 */
+        }
+
+        .up-arrow {
+            width: 50px; /* 크기 30% 증가 */
+            height: 50px; /* 크기 30% 증가 */
+            fill: black; /* 화살표 색상 검정으로 설정 */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="nav">
+            <ul class="nav-list nav-list-mobile">
+                <li class="nav-item">
+                    <div class="mobile-menu">
+                        <span class="line line-top"></span>
+                        <span class="line line-bottom"></span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-link-logo"></a> <!-- 링크 수정 -->
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-link-bag"></a>
+                </li>
+            </ul>
+            <!-- /.nav-list nav-list-mobile -->
+            <ul class="nav-list nav-list-larger">
+                <li class="nav-item nav-item-hidden">
+                    <a href="#" class="nav-link nav-link-logo"></a> <!-- 링크 수정 -->
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">울트라기어</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">27GS95QE</a></li>
+                        <li><a href="#">27GR95QE</a></li>
+                        <li><a href="#">27GP750</a></li>
+                        <li><a href="#">27GN65R</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">스마트 모니터</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">43SQ700SW</a></li>
+                        <li><a href="#">27SR50F</a></li>
+                        <li><a href="#">27TQ600SY</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">울트라와이드</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">34WN780</a></li>
+                        <li><a href="#">34WQ650W</a></li>
+                        <li><a href="#">29WQ500</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">4K 모니터</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">43SQ700SW</a></li>
+                        <li><a href="#">27UP550N</a></li>
+                        <li><a href="#">32SQ750S</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">일반 모니터</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">32MR50C</a></li>
+                        <li><a href="#">27QN600</a></li>
+                        <li><a href="#">27ML600sw</a></li>
+                        <li><a href="#">27MP400</a></li>
+                        <li><a href="#">24QP500</a></li>
+                        <li><a href="#">24MN430HW</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">A-PRO</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">AP-43S</a></li>
+                        <li><a href="#">AP-32S</a></li>
+                        <li><a href="#">AP-T13B</a></li>
+                        <li><a href="#">AP-T49W</a></li>
+                        <li><a href="#">AP-T75W</a></li>
+                        <li><a href="#">AP-T82B</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">고객지원</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">전화상담</a></li>
+                        <li><a href="#">카카오톡 상담</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-link-search"></a>
+                </li>
+                <li class="nav-item nav-item-hidden">
+                    <a href="#" class="nav-link nav-link-bag"></a>
+                </li>
+            </ul>
+            <!-- /.nav-list nav-list-larger -->
+        </nav>
+    </div>
+</header>
+
+<section class="hero smart">
+    <div class="container">
+        <div class="title title-dark">
+            <h2 class="title-heading">스마트모니터</h2>
+            <h3 class="title-sub-heading">깔끔한 디자인. 선명한 디스플레이.</h3>
+            <p class="title-price">더욱 똑똑해진 소프트웨어.</p>
+        </div>
+        <div class="cta">
+            <a href="smart-monitor.html" class="cta-link">Learn more</a> <!-- 링크 수정 -->
+            <a href="#" class="cta-link">Buy</a>
+        </div>
+    </div>
+</section>
+<section class="hero ultragear">
+    <div class="container">
+        <div class="title">
+            <h2 class="title-heading-ultragear"></h2>
+            <h3 class="title-sub-heading">게이머를 위한 최상의 선택 <br>
+                울트라기어로 게임을 지배하세요</h3>
+        </div>
+        <div class="cta">
+            <a href="./ultragear/ultragear-main.html" class="cta-link cta-link-darker">Learn more</a> <!-- 링크 수정 -->
+            <a href="#" class="cta-link cta-link-darker">Buy</a>
+        </div>
+    </div>
+</section>
+
+<section class="hero stand">
+    <div class="container">
+        <div class="title title-dark">
+            <h2 class="title-heading">스탠드</h2>
+            <h3 class="title-sub-heading">모니터를 사용하는 새로운 방법 </h3>
+            <p class="title-price">이동형 멀티 스탠드</p>
+        </div>
+        <div class="cta">
+            <a href="stand.html" class="cta-link cta-link-darker">Learn more</a> <!-- 링크 수정 -->
+            <a href="#" class="cta-link cta-link-darker">Buy</a>
+        </div>
+    </div>
+</section>
+
+<section class="hero news">
+    <div class="container">
+        <div class="title title-dark">
+            <h2 class="title-heading">News Letter</h2>
+            <h3 class="title-sub-heading">매월 받아보는 제품 & 할인 정보 </h3>
+            <p class="title-price">월간 지오비전 News letter</p>
+        </div>
+        <div class="cta">
+            <a href="stand.html" class="cta-link cta-link-darker">Learn more</a> <!-- 링크 수정 -->
+            <a href="#" class="cta-link cta-link-darker">Apply</a>
+        </div>
+    </div>
+</section>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <img src="images/icons/top.png" alt="Back to Top" class="up-arrow">
+</a>
+
+<script src="main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "flex";
+                backToTopButton.style.opacity = "1";
+                backToTopButton.style.visibility = "visible";
+            } else {
+                backToTopButton.style.opacity = "0";
+                backToTopButton.style.visibility = "hidden";
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        backToTopButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // Add event listener for the logo click
+        const logoLink = document.querySelector(".nav-link-logo");
+        logoLink.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent the default link behavior
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            location.reload(); // Reload the page
+        });
+    });
+</script>
+</body>
+</html>

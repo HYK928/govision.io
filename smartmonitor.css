@@ -1,0 +1,60 @@
+html {
+    height: 500vh;
+}
+
+body {
+    background: #fff; /* Change background to white */
+    height: 500vh;
+    margin: 0; /* Remove default body margin */
+}
+
+canvas {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    background: #fff; /* Change overlay background to white */
+}
+
+.message {
+    color: #000; /* Change text color to black */
+    font-size: 2rem;
+    transform: scale(0);
+    transition: transform 1s ease-in-out;
+}
+
+.overlay.visible {
+    opacity: 1;
+}
+
+.message.visible {
+    transform: scale(1);
+}
+
+.content {
+    display: none;
+    background: #fff; /* Change content background to white */
+    color: #000; /* Change text color to black */
+    padding: 20px;
+    text-align: center;
+}
+
+.content.visible {
+    display: block;
+}

@@ -1,0 +1,511 @@
+/* Global */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 2.2rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1400;
+    width: 100%;
+    height: 4.4rem;
+    background-color: #ffffff;
+    backdrop-filter: blur(2rem);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -1rem;
+}
+
+.nav-list-mobile {
+    display: none;
+}
+
+.nav-link {
+    font-size: 1.4rem;
+    color: #000;
+    padding: 0 1rem;
+    transition: opacity .5s;
+}
+
+.nav-link:hover {
+    opacity: .7;
+}
+
+.nav-link-logo {
+    width: 1.6rem;
+    height: 4.4rem;
+    background: url("images/icons/go logo.png") center no-repeat;
+}
+
+.nav-link-search {
+    width: 1.6rem;
+    height: 4.4rem;
+    background: url("images/icons/search.png") center no-repeat;
+}
+
+.nav-link-bag {
+    width: 1.4rem;
+    height: 4.4rem;
+    background: url("images/icons/bag.png") center no-repeat;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: block; /* Change to block to enable transitions */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px; /* Fixed padding */
+    list-style: none;
+    margin: 0;
+    min-width: 250px; /* Fixed width */
+    max-height: 0; /* Initial height set to 0 */
+    opacity: 0; /* Initial opacity set to 0 */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Transition for max-height and opacity */
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px; /* Fixed padding for larger clickable area */
+    font-size: 18px; /* Fixed font size */
+}
+
+.nav-item:hover .dropdown-menu {
+    max-height: 500px; /* Large enough to contain the entire dropdown */
+    opacity: 1; /* Fully opaque when visible */
+}
+
+
+/* Hero Section */
+.hero {
+    height: 69.2rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: .6rem solid #fff;
+    border-bottom: .6rem solid #fff;
+}
+
+.smart {
+    background-image: url("images/hero/smart monitor/smart_monitor_large.jpg");
+    margin-top: 4.4rem;
+    border-top: none;
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    padding-top: 5.5rem;
+}
+
+.title-heading {
+    font-size: 5.6rem;
+    line-height: 1.07143;
+    letter-spacing: -.005rem;
+}
+
+.title-sub-heading {
+    font-size: 2.6rem;
+    margin-top: .6rem;
+    letter-spacing: .008rem;
+    font-weight: 400;
+}
+
+.title-price {
+    font-size: 2.6rem;
+    margin-top: .6rem;
+    letter-spacing: .008rem;
+    font-weight: 400;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 1.8rem;
+}
+
+.cta-link {
+    color: #66bbff;
+    font-size: 2.1rem;
+    display: inline-block;
+}
+
+.cta-link:nth-child(2) {
+    margin-left: 2.6rem;
+}
+
+.cta-link:hover {
+    border-bottom: 2px solid #66bbff;
+}
+
+.stand {
+    background-image: url("images/hero/stand/stand_large.jpg");
+}
+
+.title-dark {
+    color: #000;
+}
+
+.cta-link-darker {
+    color: #0070c9;
+}
+
+.cta-link-darker:hover {
+    border-bottom-color: #0070c9;
+}
+
+.ultragear {
+    background-image: url("images/hero/ultragear/ultragear_large.jpg");
+}
+
+.title-heading-ultragear {
+    height: 7.8rem;
+    background: url("images/hero/ultragear/logo_ultragear_large.png") center no-repeat;
+    background-size: auto 7.8rem;
+    margin-top: 1.6rem;
+}
+
+.news {
+    background-image: url("https://gi.esmplus.com/BLADER01/Hyuk/new_large.jpg");
+}
+
+@media screen and (max-width: 1068px) {
+    .smart {
+        background-image: url("images/hero/smart monitor/smart_monitor_medium.jpg");
+    }
+
+    .stand {
+        background-image: url("images/hero/stand/stand_medium.jpg");
+    }
+
+    .ultragear {
+        background-image: url("images/hero/ultragear/ultragear_medium.jpg");
+    }
+
+    .hero {
+        height: 65rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .title-heading {
+        font-size: 4.4rem;
+    }
+
+    .title-sub-heading {
+        font-size: 2.4rem;
+    }
+
+    .cta-link:nth-child(2) {
+        margin-left: 2rem;
+    }
+
+    .title-heading-ultragear {
+        height: 6.2rem;
+        background: url("images/hero/ultragear/logo_ultragear_medium.png") center no-repeat;
+        background-size: auto 6.2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        height: 4.8rem;
+        transition: background .36s cubic-bezier(0.32, 0.08, 0.24, 1), height .56s cubic-bezier(0.32, 0.08, 0.24, 1);
+    }
+
+    header .container {
+        padding: 0;
+    }
+
+    .smart {
+        margin-top: 4.8rem;
+    }
+
+    .nav-list {
+        margin-top: 0;
+    }
+
+    .nav-list-mobile {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item-hidden {
+        display: none;
+    }
+
+    .mobile-menu {
+        position: relative;
+        z-index: 1500;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .line {
+        position: absolute;
+        width: 1.7rem;
+        height: 1px;
+        background-color: #000; /* Change line color to black */
+        transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+
+    .line-top {
+        margin-top: 3px;
+    }
+
+    .line-bottom {
+        margin-top: -.4rem;
+    }
+
+    .active .line-top {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+
+    .active .line-bottom {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+
+    header.active {
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .nav-link-apple {
+        width: 1.8rem;
+        height: 4.8rem;
+        position: relative;
+        z-index: 1500;
+    }
+
+    .nav-link-bag {
+        width: 1.6rem;
+        height: 4.8rem;
+        transition: opacity 3s;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .nav-link {
+        font-size: 1.7rem;
+        padding: 0;
+        margin: auto 0;
+    }
+
+    .nav-list-larger {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        display: block;
+        padding: 10.5rem 5rem;
+        z-index: 1000;
+        box-sizing: border-box;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s;
+    }
+
+    .active .nav-list-larger {
+        width: 100%;
+        height: 100vh;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .active .nav-link-bag {
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .nav-list-larger .nav-item {
+        width: 100%;
+        justify-content: flex-start;
+        border-bottom: 2px solid rgba(255, 255, 255, .1);
+    }
+
+    .nav-list-larger .nav-item:nth-child(9) {
+        border-bottom: none;
+    }
+
+    .active .nav-list-larger .nav-item {
+        animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .smart {
+        background-image: url("images/hero/smart monitor/smart_monitor_small.jpg");
+    }
+
+    .stand {
+        background-image: url("images/hero/stand/stand_small.jpg");
+    }
+
+    .ultragear {
+        background-image: url("images/hero/ultragear/ultragear_small.jpg");
+    }
+
+    .hero {
+        height: 50rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        padding: 3.7rem;
+    }
+
+    .title-heading {
+        font-size: 3.2rem;
+    }
+
+    .title-sub-heading {
+        font-size: 1.9rem;
+    }
+
+    .title-heading-ultragear {
+        margin-top: -.5rem;
+        margin-bottom: 0;
+    }
+
+    .title-price {
+        font-size: 1.4rem;
+    }
+
+    .cta {
+        margin-top: .7rem;
+
+        .cta-link {
+            font-size: 1.9rem;
+        }
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px; /* 크기 30% 증가 */
+    height: 70px; /* 크기 30% 증가 */
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* 배경을 흰색으로 설정 */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 추가 */
+    z-index: 1500;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #f0f0f0; /* 호버 시 약간 더 어두운 흰색 */
+}
+
+.up-arrow {
+    width: 40px; /* 크기 30% 증가 */
+    height: 40px; /* 크기 30% 증가 */
+    fill: black; /* 화살표 색상 검정으로 설정 */
+}
+
+/* Dropdown menu modification for mobile view */
+@media screen and (max-width: 767px) {
+    .nav-item:hover .dropdown-menu {
+        max-height: none;
+        opacity: 1;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%; /* Position the menu to the right */
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        list-style: none;
+        margin: 0;
+        min-width: 200px;
+        z-index: 1000;
+    }
+
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .nav-list-larger .nav-item {
+        position: relative;
+    }
+}
